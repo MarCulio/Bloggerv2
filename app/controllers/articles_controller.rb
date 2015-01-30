@@ -40,7 +40,6 @@ class ArticlesController < ApplicationController
 	def update
 		@article = Article.find(params[:id])
   		@article.update(article_params)
-  		binding.pry
   		if @article.valid?
 	  		flash.notice = "Article '#{@article.title}' Updated!"
 	  	else
