@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html>
+<head>
+  <title>hungry academy</title>
+  <link href="/stylesheets/base.css?1369930751" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/layout.css?1369930751" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/skeleton.css?1369930751" media="screen" rel="stylesheet" type="text/css" />
+  <meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="ylRphOQ5BBgrI6ChoN9ZTJEmJpXRM&#47;DsdmUwCEgz+7A="/>
+  <script src="/javascripts/prototype.js" type="text/javascript"></script>
+<script src="/javascripts/effects.js" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js" type="text/javascript"></script>
+<script src="/javascripts/controls.js" type="text/javascript"></script>
+<script src="/javascripts/rails.js" type="text/javascript"></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+/* blog posts*/
+google.load("feeds", "1");
+function initialize() {
+  var feed = new google.feeds.Feed("http://blog.hungryacademy.com/atom.xml?maxresults=4");
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("octo-feed");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        var alink = document.createElement("a");
+        var parsed_text = parseText(entry.title, 35)
+        alink.href = entry.link;
+        alink.appendChild(document.createTextNode(parsed_text));
+        li.appendChild(alink);
+        container.appendChild(li);
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+</script>
+
+<script type="text/javascript">
+/* calendar feed */
+google.load("feeds", "1");
+function initialize() {
+  var feed = new google.feeds.Feed("http://www.google.com/calendar/feeds/casimircreative.com_47plr4d1p83ctsojpfvk8t8i8g%40group.calendar.google.com/public/basic?orderby=starttime&sortorder=ascending&futureevents=true&maxresults=4");
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("calendar-feed");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        var alink = document.createElement("a");
+        var parsed_text = parseText(entry.title, 28)
+        alink.href = entry.link;
+        alink.appendChild(document.createTextNode(parsed_text));
+        li.appendChild(alink);
+        container.appendChild(li);
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+</script>
+<script type="text/javascript">
+/* code posts*/
+google.load("feeds", "1");
+function initialize() {
+  var feed = new google.feeds.Feed("http://blog.hungryacademy.com/blog/categories/code/atom.xml?maxresults=4");
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("follow-along");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        var alink = document.createElement("a");
+        var parsed_text = parseText(entry.title, 35)
+        alink.href = entry.link;
+        alink.appendChild(document.createTextNode(parsed_text));
+        li.appendChild(alink);
+        container.appendChild(li);
+      }
+    }
+  });
+}
+function parseText(text, size){
+  var temp_text = text
+  if(temp_text.length > size){
+    temp_text = temp_text.slice(0,size-3);
+    temp_text = temp_text.concat('...');
+  }
+  temp_text = temp_text.replace('amp;', '');
+  return temp_text;
+}
+google.setOnLoadCallback(initialize);
+</script>
+
+  <link href="/favicon.ico?1369930751" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+</head>
+<body>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>hungry academy powered by livingsocial & jumpstartlab</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/layout.css">
+
+  <!-- JS
+  ================================================== -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="javascript/jquery.raptorize.1.0.js"></script>
+
+  <!-- For the Konami Code version -->
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('.btn').raptorize({
+        'enterOn' : 'konami-code'
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+
+
+  <!-- Primary Page Layout
+  ================================================== -->
+
+  <!-- Delete everything in this .container and get started on your own site! -->
+
+  <div class="container">
+    <header class="sixteen columns">
+      <a href="#" class="btn" style="display: none;">Click me</a>
+      <h1>Hungry Academy</h1>
+       <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/theprogram">The Program</a>
+            </li>
+            <li>
+              <a href="http://blog.hungryacademy.com">News</a>
+            </li>
+            <li>
+              <a href="http://blog.hungryacademy.com/blog/categories/code">Follow Along</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+<div class="sixteen columns content top">
+  <div class="ten columns mod">
+    <div class="video">
+      <iframe src="http://player.vimeo.com/video/33926981?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+  </div>
+  <div class="five columns mod abouttheacademy">
+    <h2>About the Academy:</h2>
+    <p>The Hungry Academy is a unique and game changing five-month learning experience. It's your opportunity to push yourself to the limits. At Hungry Academy you’ll:</p>
+
+    <ul class="square">
+      <li>Work with and be mentored by the industry’s best programmers.</li>
+      <li>Learn how to build successful products using software development tools, like Ruby on Rails.</li>
+      <li>Prepare yourself to join LivingSocial’s elite engineering team.</li>
+      <li>Have a huge impact on the world of local commerce.</li>
+    </ul>
+  </div>
+</div>
+</div>
+<div id="banner">
+  <span>
+  <div class="container bannercontainer">
+    <div class="five columns mod articles offset-by-one">
+      <h2>Recent Articles:</h2>
+      <ul id="octo-feed"></ul>
+    </div>
+
+    <div class="four columns mod events">
+      <h2>Upcoming Events:</h2>
+      <ul id="calendar-feed"></ul>
+    </div>
+
+    <div class="five columns mod resources">
+      <h2>Follow Along:</h2>
+      <ul id="follow-along">
+      </ul>
+    </div>
+  </div>
+  </span>
+</div>
+<div class="container">
+  <div class="sixteen columns content bottom">
+    <div class="five columns beastimage offset-by-one">
+      <img src="/images/beast.png" />
+    </div>
+
+    <div class ="four columns mod joinmailinglist" style="margin-left:0;">
+      <h2>Join our Mailing List</h2>
+      <form action="http://jumpstartlab.us1.list-manage.com/subscribe/post?u=8080b7a05247f0dee13a0a26f&amp;id=b65b2a065f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div class="mc-field-group">
+          <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" title="Your Email Address" placeholder="Your Email Address">
+          <div id="mce-responses">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+      </form>
+    </div>
+
+    <div class="five columns mod quot">
+      <h2>Are You Hungry?</h2>
+      <blockquote data-author="Chad Fowler, VP Engineering, LivingSocial">
+        <p>The Hungry Academy is an intensive program that will put you in a position to join our engineering team. It’s an exclusive program for two dozen dedicated people who want to build amazing products.</p>
+      </blockquote>
+    </div>
+
+  </div>
+<div class=" footer sixteen columns" align="right">
+  <p>
+    <table>
+      <tr>
+        <td>
+          <a href="#" class="poweredimage">powered by livingsocial & jumpstartlab</a>
+        </td>
+        <td class="hungry">
+          <a href="http://twitter.com/#!/HungryAcademy" class="twitterimage">@hungryacademy</a>
+        </td>
+        <td>
+          <a href="mailto:hungryacademy@livingsocial.com" class="emailimage">hungryacademy@livingsocial.com</a>
+        </td>
+      </tr>
+    </table>
+  </p>
+</div>
+
+</div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+<script type="text/javascript">
+var _gauges = _gauges || [];
+(function() {
+  var t   = document.createElement('script');
+  t.type  = 'text/javascript';
+  t.async = true;
+  t.id    = 'gauges-tracker';
+  t.setAttribute('data-site-id', '4ef1e088613f5d7bde000002');
+  t.src = '//secure.gaug.es/track.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(t, s);
+  })();
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
