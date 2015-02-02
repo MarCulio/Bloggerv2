@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration
     t.string :title
     t.text :body
     t.timestamps null: false
+    t.integer :impressions_count, default: 0
     end
   end
 end

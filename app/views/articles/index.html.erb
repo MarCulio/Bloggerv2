@@ -7,12 +7,16 @@
 <br>
 </br>
 
-  <% @articles.each do |article| %>
+
+
+  <% @articles.sort_by {|article| article.impressionist_count}.each do |article| %>
+
     <li>
       <%= link_to article.title, article_path(article), class: 'article_title' %>
     </li>
     
   <% end %>
+
   <br>
  </br>
     <br>

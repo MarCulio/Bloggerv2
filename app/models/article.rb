@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
 	has_many :comments
 	has_many :taggings
 	has_many :tags, through: :taggings
-	is_impressionable
+	is_impressionable :counter_cache => true, :column_name => :impressions_count
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 	
@@ -15,4 +15,5 @@ class Article < ActiveRecord::Base
   		new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
   		self.tags = new_or_found_tags
 	end
+
 end
