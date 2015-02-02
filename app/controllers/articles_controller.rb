@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
-
+	impressionist actions: [:show], unique: [:session_hash]
+	
 	def index
 		@articles = Article.all
 	end
@@ -9,9 +10,8 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 		@comment = Comment.new
 		@comment.article_id = @article.id
-
+		impressionist(@article)
 	end
-
 	def new
 		@article = Article.new
 		@comment = Comment.new
