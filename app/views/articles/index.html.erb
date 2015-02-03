@@ -1,18 +1,37 @@
 <h1>All Articles</h1>
 
 <ul id="articles">
-	<li>
-	<%= link_to "Create a New Article", new_article_path, class: 'new_article'%>
+  <li>
+  <%= link_to "Create a New Article", new_article_path, class: 'new_article'%>
    </li>
 <br>
 </br>
+<% blogs = Article.all.sort_by {|article| article.impressionist_count}.reverse %>
+<h2> <b>Top 3 blogs:</b> </h2>
+<table>
+  <tr>
+    <th><b>Title</b></th>
+    <th><b>Views</b></th>
+  </tr>
+  <%if blogs.size != 0 %>
+    <% blogs.each do |article| %>
+      <tr>
+      <td><%= link_to article.title, article, class: 'article_title' %> </td>
+      <td><%=article.impressionist_count%> </td>
+      </tr>
 
-
-
-  <% @articles.sort_by {|article| article.impressionist_count}.each do |article| %>
+    <% end %>
+  <%else %>
+    <em>No Blogs Found</em>
+  <% end %>
+</table>
+<br>
+</br>
+<h2><b>Blog list:</b></h2>
+  <% @articles.each do |article| %>
 
     <li>
-      <%= link_to article.title, article_path(article), class: 'article_title' %>
+      <%= link_to article.title, article, class: 'article_title' %>
     </li>
     
   <% end %>
@@ -20,8 +39,8 @@
   <br>
  </br>
     <br>
-    	<li>
-    		<%= link_to "Browse tags", tags_path, class: 'new_article' %>
-		</li>
-	</br>
+      <li>
+        <%= link_to "Browse tags", tags_path, class: 'new_article' %>
+    </li>
+  </br>
 </ul>
