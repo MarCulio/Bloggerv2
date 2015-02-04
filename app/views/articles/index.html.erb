@@ -1,23 +1,23 @@
-<h1>All Articles</h1>
+<h1>All Blogs</h1>
 
 <ul id="articles">
   <li>
-  <%= link_to "Create a New Article", new_article_path, class: 'new_article'%>
+  <%= link_to "Create a New Blog", new_article_path, class: 'new_article'%>
    </li>
 <br>
 </br>
 <% blogs = Article.all.sort_by {|article| article.impressionist_count}.reverse %>
-<h2> <b>Top 3 blogs:</b> </h2>
-<table>
-  <tr>
-    <th><b>Title</b></th>
-    <th><b>Views</b></th>
+<h2> <b>Current Top 3 blogs:</b> </h2>
+<table class="<%= 'big_table' -%>">
+   <tr class="<%= 'header' -%>">
+   <th><b>Title</b></th>
+   <th><b>Views</b></th>
   </tr>
   <%if blogs.size != 0 %>
     <% blogs.each do |article| %>
-      <tr>
+      <tr class="<%= 'blog' -%>">
       <td><%= link_to article.title, article, class: 'article_title' %> </td>
-      <td><%=article.impressionist_count%> </td>
+      <td><%= article.impressionist_count%> </td>
       </tr>
 
     <% end %>

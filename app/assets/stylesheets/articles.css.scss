@@ -1,3 +1,18 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table tr.header {
+    background-color: #52ABB8;
+
+}
+table th.column {
+    background-color: #61DAD6;
+    
+}
+table tr.blog {
+    background-color: #C8D5D5;
+}
+table table.big_table {
+	background-color: #D3DD8A;
+}
