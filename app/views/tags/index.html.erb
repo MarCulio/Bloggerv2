@@ -3,10 +3,11 @@
 <ul id="tags">
   <% @tags.each do |tag| %>
     <li>
-      <%= link_to tag.name, tag_path(tag), class: 'tag_name' %> --- <%= link_to "delete?", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %>
+      <%= link_to tag.name, tag_path(tag), class: 'tag_name' %> <---<%= link_to "delete?", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %>
     </li>
     <% end %>
+    <br></br>
     <li>
-   		<%= link_to "<< Back to Articles List", articles_path %>
+   		<%= link_to "<< Back to Blogs List", articles_path %>
 	</li>
 </ul>
