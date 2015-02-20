@@ -17,7 +17,7 @@
    <th id="count"><b>Views</b></th>
   </tr>
   <%if blogs.size != 0 %>
-    <% blogs.each do |article| %>
+    <% blogs[0..2].each do |article| %>
       <tr class="<%= 'blog' -%>">
       <td><%= link_to article.title, article, class: 'article_title' %> </td>
       <td id="count"><%= article.impressionist_count%></td>
