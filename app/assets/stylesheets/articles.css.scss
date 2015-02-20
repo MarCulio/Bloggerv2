@@ -15,4 +15,24 @@ table tr.blog {
 }
 table table.big_table {
 	background-color: #D3DD8A;
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+}
+table#table1 {
+  text-align:center;
+  width:70%;
+  margin-left:15%;
+  margin-right:15%;
+
+}
+tr,td {text-align:left;}
+
+td#count {
+   text-align:center;
+
+ }
+th#count {
+  text-align:center;
+
 }

@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
 		@comment = Comment.new
 		@comment.article_id = @article.id
 		impressionist(@article, nil, { unique: [:session_hash] })
+		respond_to do |format|
+			format.html
+			format.json {render json: @article}
+		end
 	end
 	def new
 		@article = Article.new
@@ -21,14 +25,14 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.new(article_params)
   		@article.save
-  		flash.notice = "Article '#{@article.title}' was created"
+  		flash.notice = "Blog '#{@article.title}' was created"
 		redirect_to article_path(@article)
 	end
 
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
-		flash.notice = "Article '#{@article.title}' was deleted"
+		flash.notice = "Blog '#{@article.title}' was deleted"
 		redirect_to action: "index"
 	end
 
@@ -41,9 +45,9 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
   		@article.update(article_params)
   		if @article.valid?
-	  		flash.notice = "Article '#{@article.title}' Updated!"
+	  		flash.notice = "Blog '#{@article.title}' Updated!"
 	  	else
-	  		flash.notice = "Article is not valid!"
+	  		flash.notice = "Blog is not valid!"
 	  	end
   		redirect_to article_path(@article)
 	end
